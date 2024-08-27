@@ -18,7 +18,7 @@ const updateBreakpoint = () => {
         menu.value = defineAsyncComponent (() =>
             import('../components/layouts/header/SmallHeader.vue')
     );
-    } else(width < 1200); {
+    } else{
         breakpoint.value = 'lg';
         menu.value = defineAsyncComponent(()=>
             import('../components/layouts/header/LargeHeader.vue')
