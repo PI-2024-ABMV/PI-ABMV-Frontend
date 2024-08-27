@@ -9,15 +9,34 @@ import{
 export function UseMonitor() {
     const breakpoint = ref('sm');
     const menu = shallowRef(
-        defineAsyncComponent(() => import('@/components/layouts/SmallHeader.vue'))
+        defineAsyncComponent(() => import('../components/layouts/header/SmallHeader.vue'))
     )
-};
-
-const UpdateBreakpoint = () => {
+const updateBreakpoint = () => {
     const width = window.innerWidth;
     if(width < 768) {
-        
-    }
+        breakpoint.value = 'sm';
+        menu.value = defineAsyncComponent (() =>
+            import('../components/layouts/header/SmallHeader.vue')
+    );
+    } else(width < 1200); {
+        breakpoint.value = 'lg';
+        menu.value = defineAsyncComponent(()=>
+            import('../components/layouts/header/LargeHeader.vue')
+    );
+    };
+}
+onMounted(() => {
+    updateBreakpoint();
+    window.addEventListener('resize', updateBreakpoint);
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateBreakpoint);
+  });
+
+  return {
+    breakpoint,
+    menu,
+  };
 
 }
-
