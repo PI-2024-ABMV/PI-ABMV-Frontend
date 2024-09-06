@@ -9,19 +9,19 @@ import{
 export function UseMonitor() {
     const breakpoint = ref('sm');
     const menu = shallowRef(
-        defineAsyncComponent(() => import('../components/layouts/header/SmallHeader.vue'))
+        defineAsyncComponent(() => import('../layouts/LayoutFull.vue'))
     )
 const updateBreakpoint = () => {
     const width = window.innerWidth;
     if(width < 768) {
         breakpoint.value = 'sm';
         menu.value = defineAsyncComponent (() =>
-            import('../components/layouts/header/SmallHeader.vue')
+            import('../layouts/LayoutSmall.vue')
     );
     } else{
         breakpoint.value = 'lg';
         menu.value = defineAsyncComponent(()=>
-            import('../components/layouts/header/LargeHeader.vue')
+            import('../layouts/LayoutLarge.vue')
     );
     };
 }

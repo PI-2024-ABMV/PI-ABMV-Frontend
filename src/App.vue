@@ -1,11 +1,9 @@
 <script setup>
-import {UseMonitor} from '../composables/screen.js';
-const { menu } = UseMonitor();
+import LayoutFull from '../layouts/LayoutFull.vue';
 </script>
 
 <template>
-  <component :is="menu"/>
-  <RouterView />
+  <LayoutFull />
 </template>
 
 <style scoped>
