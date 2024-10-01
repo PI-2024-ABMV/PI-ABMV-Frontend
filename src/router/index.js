@@ -11,7 +11,7 @@ const router = createRouter({
       component: LayoutFull,
       children: [
         {
-          path: '/homeee',
+          path: '/',
           name: 'home',
           component: HomeView
         }
