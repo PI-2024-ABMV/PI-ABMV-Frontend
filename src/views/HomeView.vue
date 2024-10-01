@@ -9,11 +9,12 @@
     <div class="ContainerTexto">
     <h1>Duna - Parte 2</h1>
     <p>Paul Atreides se une a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família. Enfrentando uma escolha entre o amor de sua vida e o destino do universo, ele deve evitar um futuro terrível que só ele pode prever.</p>
-</div>
-<div class="Botoes">
+    <div class="Botoes">
     <button>Trailer</button>
     <button>Ingressos</button>
 </div>
+</div>
+
 </div>
 </template>
 <style scoped>
@@ -43,7 +44,7 @@
     font-family:'Lexend Mega';
     margin-top: 15vh;
     z-index: 20;
-    margin-left: -25vw;    
+    margin-left: -40vw;    
 }
 .ContainerTexto p {
     margin-left: 1vw;
@@ -51,7 +52,7 @@
 .Botoes {
     display: flex;
     margin-top: 5vh;
-    margin-left: 3vw;
+    margin-left: -40vw;
 }
 .Botoes button {
     background-color: #262424;
