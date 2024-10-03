@@ -49,7 +49,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: static;
+    position: relative;
     bottom: 0;
     width: 100%;
 }   
