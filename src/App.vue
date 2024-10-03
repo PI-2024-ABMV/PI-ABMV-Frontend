@@ -1,9 +1,8 @@
 <script setup>
-import LayoutFull from '../layouts/LayoutFull.vue';
 </script>
 
 <template>
-  <LayoutFull />
+<RouterView/>
 </template>
 
 <style scoped>
