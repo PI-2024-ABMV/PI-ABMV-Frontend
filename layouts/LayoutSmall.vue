@@ -1,4 +1,7 @@
+<script setup>
+import SmallHeader from '../components/template/header/SmallHeader.vue';
+</script>
 
 <template>
-    <h1>Small</h1>
+<SmallHeader/>
 </template>
