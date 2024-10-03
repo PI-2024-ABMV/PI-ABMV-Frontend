@@ -77,6 +77,7 @@ h2{
     font-size: 2rem;
     font-family: 'Lexend Mega';
     color: #DDB1FF;
+    filter: drop-shadow(0px 0px 10px #DDB1FF);
 }
 .CartazFilm{ 
     display: flex;
