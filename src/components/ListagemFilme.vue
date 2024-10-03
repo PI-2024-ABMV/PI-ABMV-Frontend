@@ -99,7 +99,6 @@ font-family: 'Lexend Mega';
 justify-content: left;
 gap: 5rem;
 margin: 0 0 0 5%;
-
 }
 .ApreFilme img {
     width: 80%;  
