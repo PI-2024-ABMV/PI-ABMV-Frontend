@@ -1,10 +1,19 @@
-<script setup></script>
+<script setup>
+import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
+</script>
 <template>
     <div class="ApreFilme">
+        <div class="Loc">
+            <MapMarkerOutline :size="40" />
+            <h2>Mew Movies</h2>
+        </div>
         <img src="/public/wolverine.png" width="100%" height="300px" alt="">
         <div class="Texto">
+            <div class="Classificacao">
+            <img src="../../public/image.png" alt="">
             <p>Ação, Aventura, Comédia</p>
-            <h2>Deadpool & Wolverine</h2>
+            </div>
+            <div class="Titulo"><h2>Deadpool & Wolverine</h2></div>
         </div>
     </div>
     <main>
@@ -59,12 +68,36 @@
     </main>
 </template>
 <style scoped>
+.Loc{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    color: #DDB1FF;
+    font-family: 'Lexend Mega';
+}
+.Classificacao{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: small;
+}
 .Texto{
     z-index: 999;
     position: absolute;
     top: 225px;
     color: white;
     font-family: 'Lexend Mega';
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+.Texto img {
+    width: 30px;
+    margin: 0 auto;
 }
 .ApreFilme {
     background-color: #262424;
