@@ -7,7 +7,7 @@
     <template>
         <div class="cabecalho">
             <header>
-                <img src="../../../public/logoMew.png" height="70vh">
+                <img src="../../../../public/logoMew.png" height="70vh">
                 <div class="icon">
                     <TicketOutline :size="45" class="hover"/>
                     <AccountCircleOutline :size="45" class="hover"/>
