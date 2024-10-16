@@ -5,6 +5,7 @@ const { menu, breakpoint } = UseMonitor();
 
 </script>
 <template>
+    
     <ListagemFilmeMobile v-if="breakpoint == `sm`"/>
     
     <component :is="menu" v-else/>

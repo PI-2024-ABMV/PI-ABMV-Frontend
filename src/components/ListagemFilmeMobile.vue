@@ -32,25 +32,9 @@ import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
                     <img src="/public/open.png" alt="">
                     <p>Duna</p>
                 </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
             </div>
             <h2>Em Breve</h2>
             <div class="ListagemFilm">
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
                 <div class="CartazFilm">
                     <img src="/public/open.png" alt="">
                     <p>Duna</p>
