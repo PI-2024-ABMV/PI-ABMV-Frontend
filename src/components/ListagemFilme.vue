@@ -41,8 +41,9 @@ onMounted(() => {
 
 <div v-for="movie in movieStore.movies" :key="movie.id" class="ListagemFilm">
     <div  class="CartazFilm">
-    {{ movie.id }}
-
+        <RouterLink :to="{ name: 'filme', params: { id: movie.id } }">
+        {{ movie.id }}
+        </RouterLink>
     </div>
 </div>
 </main>
