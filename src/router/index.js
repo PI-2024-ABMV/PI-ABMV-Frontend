@@ -17,20 +17,24 @@ const router = createRouter({
         },
         {
           path: '/filme',
+          redirect: '/'
+        },
+        {
+          path: '/filme/:id',
           name: 'filme',
           component: () => import('../views/FilmeView.vue')
         },
-      ],
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue')
-    },
-    {
-      path: '/cadastro',
-      name: 'cadastro',
-      component: () => import('../views/CadastroView.vue')
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('../views/LoginView.vue')
+        },
+        {
+          path: '/cadastro',
+          name: 'cadastro',
+          component: () => import('../views/CadastroView.vue')
+        }
+      ]
     }
   ]
 })

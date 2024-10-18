@@ -1,4 +1,17 @@
 <script setup>
+import { onMounted } from 'vue';
+
+import { useMoviesStore } from '@/stores/movie';
+
+const movieStore = useMoviesStore();
+
+async function getUpcomingMovies() {
+  await movieStore.getUpcomingMovies();
+}
+
+onMounted(() => {
+  getUpcomingMovies();
+});
 
 </script>
 
@@ -23,44 +36,14 @@
     <img src="/public/open.png" alt="">
     <p>Duna</p>
     </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
 </div>
 <h2>Em Breve</h2>
-<div class="ListagemFilm">
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
-    </div>
-    <div class="CartazFilm">
-    <img src="/public/open.png" alt="">
-    <p>Duna</p>
+
+<div v-for="movie in movieStore.movies" :key="movie.id" class="ListagemFilm">
+    <div  class="CartazFilm">
+        <RouterLink :to="{ name: 'filme', params: { id: movie.id } }">
+        {{ movie.id }}
+        </RouterLink>
     </div>
 </div>
 </main>
