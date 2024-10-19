@@ -7,10 +7,17 @@ const movieService = new MovieService();
 
 export const useMoviesStore = defineStore('movies', () => {
    const movies = ref([]);
+   const upcomingMovies = ref([]);
+   const movie = ref();
 
    async function getUpcomingMovies() {
-      movies.value = await movieService.getUpcomingMovies();
+      upcomingMovies.value = await movieService.getUpcomingMovies();
+   };
+   async function getPlayingMovies() {
+      movies.value = await movieService.getPlayingMovies();
+   };
+   async function getMovie(id) {
+      movie.value = await movieService.getMovie(id);
    }
-
-   return { movies, getUpcomingMovies };
+   return { movies, upcomingMovies, movie, getUpcomingMovies, getPlayingMovies, getMovie };
 });
