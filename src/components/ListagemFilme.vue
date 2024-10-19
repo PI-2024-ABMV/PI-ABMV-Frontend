@@ -14,12 +14,8 @@ async function getPlayingMovies() {
 };
 
 onMounted(async () => {
-    await getUpcomingMovies();
-    await getPlayingMovies();
+    await getUpcomingMovies(), getPlayingMovies();
 });
-
-// onMounted(() => {
-// });
 
 </script>
 
@@ -44,8 +40,8 @@ onMounted(async () => {
         <div class="ListagemFilm">
             <div v-for="movie in movieStore.movies" :key="movie.id">
                 <div class="CartazFilm">
-                    <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
                     <RouterLink :to="{ name: 'filme', params: { id: movie.id } }" class="Link">
+                    <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
                         {{ movie.title }}
                     </RouterLink>
                 </div>
@@ -55,8 +51,8 @@ onMounted(async () => {
         <div class="ListagemFilm">
             <div v-for="movie in movieStore.upcomingMovies" :key="movie.id">
                 <div class="CartazFilm">
-                    <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
                     <RouterLink :to="{ name: 'filme', params: { id: movie.id } }" class="Link">
+                    <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
                         {{ movie.title }}
                     </RouterLink>
                 </div>
