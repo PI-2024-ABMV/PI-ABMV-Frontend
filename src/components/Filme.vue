@@ -11,7 +11,6 @@ const movieStore = useMoviesStore();
 
 async function getMovie() {
     await movieStore.getMovie(route.params.id);
-    console.log(movieStore);
 };
 
 onMounted(async () => {

@@ -2,12 +2,13 @@
     import AccountCircleOutline from 'vue-material-design-icons/AccountCircleOutline.vue';
     import TicketOutline from 'vue-material-design-icons/TicketOutline.vue';
     import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
+import { RouterLink } from 'vue-router';
     </script>
     
     <template>
         <div class="cabecalho">
             <header>
-                <img src="../../../../public/logoMew.png" height="70vh">
+                <RouterLink to="/"><img src="../../../../public/logoMew.png" height="70vh"></RouterLink>
                 <div class="icon">
                     <TicketOutline :size="45" class="hover"/>
                     <AccountCircleOutline :size="45" class="hover"/>
