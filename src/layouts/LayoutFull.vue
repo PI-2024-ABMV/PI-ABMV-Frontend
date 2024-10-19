@@ -1,7 +1,12 @@
 <script setup>
+import ListagemFilmeMobile from '@/components/ListagemFilmeMobile.vue';
 import {UseMonitor} from '../composables/screen.js';
-const { menu } = UseMonitor();
+const { menu, breakpoint } = UseMonitor();
+
 </script>
 <template>
-    <component :is="menu"/>
+    
+    <ListagemFilmeMobile v-if="breakpoint == `sm`"/>
+    
+    <component :is="menu" v-else/>
 </template>

@@ -38,5 +38,4 @@ onMounted(() => {
     breakpoint,
     menu,
   };
-
 }

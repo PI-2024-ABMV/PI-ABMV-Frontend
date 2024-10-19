@@ -1,27 +1,41 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+import { useMoviesStore } from '@/stores/movie';
+import convertTime from './helpers/formatTime';
+
+const route = useRoute();
+const movieStore = useMoviesStore();
+
+async function getMovie() {
+    await movieStore.getMovie(route.params.id);
+};
+
+onMounted(async () => {
+    await getMovie();
+});
 </script>
 
 <template>
     <div class="container">
         <div class="filme">
             <div class="cartaz">
-                <img src="../../public/open.png" alt="">
+                <img :src="`https://image.tmdb.org/t/p/w500/${movieStore.movie?.poster_path}`" alt="">
             </div>
             <div class="informacoes">
                 <div class="deyverson">
-                    <h1>Duna</h1>
+                    <h1>{{ movieStore.movie?.title }}</h1>
                     <div class="generos">
-                        <span class="genero">Ação</span>
-                        <span class="genero">Drama</span>
+                        <span v-for="genre in movieStore.movie?.genres" :key="genre.id" class="genero">{{ genre.name }}</span>
                     </div>
                     <div class="infos">
-                        <span>2h21min | </span>
-                        <span> 8/10 | </span>
+                        <span>{{convertTime(movieStore.movie?.runtime)}} | </span>
+                        <span> {{movieStore.movie?.vote_average}}/10 | </span>
                         <img src="../../public/class14.png" alt="">
                     </div>
-                    <p class="sinopse">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dicta quam natus
-                        maiores vitae sint, asperiores est temporibus odio aperiam reprehenderit eius debitis alias,
-                        quaerat, cumque ex velit error quia.</p>
+                    <p class="sinopse">{{movieStore.movie?.overview}}</p>
                 </div>
                 <div class="botoes">
                     <button class="botao">

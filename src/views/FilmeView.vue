@@ -1,9 +1,7 @@
 <script setup>
-import Filme from '@/components/Filme.vue';
+import { Filme } from '@/components';
 </script>
+
 <template>
     <Filme />
 </template>
-<style scoped>
-
-</style>
