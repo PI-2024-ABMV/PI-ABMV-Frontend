@@ -11,9 +11,9 @@
             <img src="../../../../public/logoMew.png" height="70vh">
             <div class="Campos">
                 <input name="Nome" type="text" placeholder="Nome">
-                <input name="E-Mail" type="text" placeholder="E-mail">
-                <input name="Senha" type="text" placeholder="Senha">
-                <input name="ConfirmaSenha" type="text" placeholder="Confirmar Senha">
+                <input name="E-Mail" type="e-mail" placeholder="E-mail">
+                <input name="Senha" type="password" placeholder="Senha">
+                <input name="ConfirmaSenha" type="password" placeholder="Confirmar Senha">
             </div>
             <button class="ButtonCadastro">Cadastrar</button>
         </div>
