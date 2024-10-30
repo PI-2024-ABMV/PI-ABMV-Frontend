@@ -1,5 +1,4 @@
 <script setup>
-
 import {UseMonitor} from '../composables/screen.js';
 const { menu } = UseMonitor();
 
