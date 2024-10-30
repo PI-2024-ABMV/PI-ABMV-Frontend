@@ -17,7 +17,10 @@ const router = createRouter({
         },
         {
           path: '/filme',
-          redirect: '/'
+          // redirect: '/'
+          name: 'filmee',
+          component: () => import('../views/FilmeView.vue')
+
         },
         {
           path: '/filme/:id',
