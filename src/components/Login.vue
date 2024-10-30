@@ -30,6 +30,10 @@
     padding: 5px;
     cursor: pointer;
 }
+.ButtonLogin:hover {
+    background-color: #DDB1FF;
+    color: #5F09A3;
+}
 
 .Container {
     width: 100%;

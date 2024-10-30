@@ -33,6 +33,10 @@
     padding: 5px;
     cursor: pointer;
 }
+.ButtonCadastro:hover {
+    background-color: #DDB1FF;
+    color: #5F09A3;
+}
 .Campos{
     display: flex;
     flex-direction: column;
