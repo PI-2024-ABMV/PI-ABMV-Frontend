@@ -1,24 +1,27 @@
-<script setup></script>
-
+<script setup>
+</script>
 <template>
-  <div class="Container">
+    
+    <div class="Container">
     <img src="../../../../public/logoMew.png" height="120vh" />
     <div class="Campos">
         <div class="input">
+            <input name="E-Mail" type="name" placeholder="Nome" />
             <input name="E-Mail" type="e-mail" placeholder="E-mail" />
-            <input name="password" type="password" placeholder="Senha" />
+            <input name="Password" type="password" placeholder="Senha" />
+            <input name="Password" type="password" placeholder="Confirmar Senha" />
         </div>
 
-      <button class="ButtonLogin">Entrar</button>
+      <button class="ButtonCadastro">Cadastrar</button>
       <hr />
     </div>
   </div>
-  <div class="Cadastro">
-    <h3>Ainda não possui uma conta?</h3>
-    <router-link to="/cadastro" class="BotaoCadastro">Criar uma conta</router-link>
+  <div class="Login">
+    <h3>Já possui uma conta?</h3>
+    <router-link to="/login" class="BotaoLogin">Entrar</router-link>
   </div>
-</template>
 
+</template>
 <style scoped>
 
 .Container {
@@ -29,7 +32,7 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-  gap: 8rem;
+  gap: 6rem;
   margin-top: 5vh;
   margin-bottom: 3vh;
 }
@@ -61,7 +64,7 @@
   color: #ddb1ff;
   outline-color: #ddb1ff;
 }
-.Cadastro {
+.Login {
   width: 50%;
   height: 100%;
   display: flex;
@@ -72,7 +75,7 @@
   color: #ffffff;
   margin-left: 10vw;
 }
-.ButtonLogin {
+.ButtonCadastro {
   width: 35%;
   height: 7vh;
   border-radius: 30px;
@@ -84,11 +87,11 @@
   padding: 5px;
   cursor: pointer;
 }
-.ButtonLogin:hover {
+.ButtonCadastro:hover {
   background-color: #ddb1ff;
-  color: #262424;
+  color: #5F09A3;
 }
-.BotaoCadastro {
+.BotaoLogin {
   text-decoration: none;
   color: #ddb1ff;
   text-shadow: 0px 0px 10px #ddb1ff;
@@ -100,4 +103,5 @@ hr {
   box-shadow: 0px 0px 10px #ddb1ff;
   
 }
+
 </style>
