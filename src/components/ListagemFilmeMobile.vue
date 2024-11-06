@@ -1,5 +1,23 @@
 <script setup>
+import { onMounted } from 'vue';
+import { useMoviesStore } from '@/stores/movie';
 import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
+
+const movieStore = useMoviesStore();
+
+async function getUpcomingMovies() {
+    await movieStore.getUpcomingMovies();
+};
+
+async function getPlayingMovies() {
+    await movieStore.getPlayingMovies();
+};
+
+onMounted(async () => {
+    await getUpcomingMovies();
+    await getPlayingMovies();
+});
+
 </script>
 <template>
     <div class="ApreFilme">
@@ -17,37 +35,29 @@ import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
         </div>
     </div>
     <main>
-        <div class="Tudo">
+        <div class="Conteiner">
             <h2>Em Cartaz</h2>
-            <div class="ListagemFilm">
+        <div class="ListagemFilm">
+            <div v-for="movie in movieStore.movies" :key="movie.id">
                 <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
+                    <RouterLink :to="{ name: 'filme', params: { id: movie.id } }" class="Link">
+                        <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
+                        {{ movie.title }}
+                    </RouterLink>
                 </div>
             </div>
-            <h2>Em Breve</h2>
-            <div class="ListagemFilm">
+        </div>
+        <h2>Em Breve</h2>
+        <div class="ListagemFilm">
+            <div v-for="movie in movieStore.upcomingMovies" :key="movie.id">
                 <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
-                </div>
-                <div class="CartazFilm">
-                    <img src="/public/open.png" alt="">
-                    <p>Duna</p>
+                    <RouterLink :to="{ name: 'filme', params: { id: movie.id } }" class="Link">
+                        <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="">
+                        {{ movie.title }}
+                    </RouterLink>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 </template>
@@ -82,17 +92,17 @@ import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
 .Texto img {
     width: 30px;
     margin: 0 auto;
+    border-radius: 5px;
 }
-.ApreFilme {
-    background-color: #262424;
-}
-.Tudo {
+
+.Conteiner {
     background-color: #262424;
     color: #DDB1FF;
     font-family: 'Lexend Mega';
     height: 100vh;
 }
-.Tudo h2 {
+
+.Conteiner h2 {
     padding: 3vh;
     font-size: 1.5rem;
     font-family: 'Lexend Mega';
@@ -100,18 +110,13 @@ import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
     filter: drop-shadow(0px 0px 10px #DDB1FF);
 }
 
-.CartazFilm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-
-}
-
 .CartazFilm img {
     width: 25vw;
-    margin: 0 auto;
+}
+
+.Link {
+    color: #DDB1FF;
+    text-decoration: none;
 }
 
 .ListagemFilm {
@@ -122,6 +127,14 @@ import MapMarkerOutline from 'vue-material-design-icons/MapMarkerOutline.vue';
     justify-content: left;
     gap: 2rem;
     margin: 0 0 0 5%;
-    background-color: #262424;
+    overflow-x: scroll;
+}
+
+.ListagemFilm::-webkit-scrollbar {
+    height: 5px;
+}
+
+.ListagemFilm::-webkit-scrollbar-thumb {
+    background-color: #DDB1FF;
 }
 </style>

@@ -38,7 +38,7 @@ onUnmounted(() => {
           </div>
           <div class="infos">
             <span>{{ convertTime(movieStore.movie?.runtime) }} | </span>
-            <span> {{ movieStore.movie?.vote_average }}/10 | </span>
+            <span> {{ movieStore.movie?.vote_average.toFixed(1) }}/10 | </span>
             <img src="../../public/class14.png" alt="" />
           </div>
           <p class="sinopse">{{ movieStore.movie?.overview }}</p>
