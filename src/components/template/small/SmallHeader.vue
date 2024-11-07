@@ -9,7 +9,9 @@
 <template>
     <nav>
         <div class="home">
-            <Home :size="50" class="hover" />
+            <RouterLink to="/" class="link">
+                <Home :size="50" class="hover" />
+            </RouterLink>
         </div>
         <div class="EmBreve">
             <NewBox :size="50" class="hover"/>
@@ -40,4 +42,7 @@ nav{
         filter: drop-shadow(0 0 5px #DDB1FF);
         cursor: pointer;
     }
+.link{
+    color: white;
+}   
 </style>

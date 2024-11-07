@@ -4,7 +4,7 @@ import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useMoviesStore } from '@/stores/movie'
-import convertTime from './helpers/formatTime'
+import convertTime from '../../../helpers/formatTime'
 
 const route = useRoute()
 const movieStore = useMoviesStore()
