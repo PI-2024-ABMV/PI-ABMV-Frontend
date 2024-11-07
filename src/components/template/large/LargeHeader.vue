@@ -16,17 +16,11 @@ import { RouterLink } from 'vue-router';
             </header>
             <nav>
                 <div class="acessos">
-    
-                    <p class="hover">EM BREVE </p>
+                    <p class="hover">EM BREVE</p>
                     <p class="hover">EM CARTAZ</p>
-             
-                 
-    
                 </div>
-                
                 <p class="hover"><MapMarkerOutline :size="20"/>Mew Theater</p>
             </nav>
-           
         </div>
     </template>
     
