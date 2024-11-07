@@ -4,8 +4,8 @@
         <div class="Login">
             <img src="../../../../public/logoMew.png" height="70vh">
             <div class="Campos">
-                <input name="E-Mail" type="text" placeholder="E-mail">
-                <input name="E-Mail" type="text" placeholder="Senha">
+                <input name="E-Mail" type="e-mail" placeholder="E-mail">
+                <input name="E-Mail" type="password" placeholder="Senha">
             </div>
             <button class="ButtonLogin">Login</button>
         </div>
@@ -29,6 +29,10 @@
     color: #DDB1FF;
     padding: 5px;
     cursor: pointer;
+}
+.ButtonLogin:hover {
+    background-color: #DDB1FF;
+    color: #5F09A3;
 }
 
 .Container {
