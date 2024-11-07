@@ -36,8 +36,8 @@ onUnmounted(() => {
             }}</span>
           </div>
           <div class="infos">
-            <div>Duração: {{ convertTime(movieStore.movie?.runtime) }}</div>
-            <div>Avaliação: {{ movieStore.movie?.vote_average.toFixed(1) }}/10 </div>
+            <p>Duração: {{ convertTime(movieStore.movie?.runtime) }}</p>
+            <p>Avaliação: {{ movieStore.movie?.vote_average.toFixed(1) }}/10 </p>
             <img src="../../public/class14.png" alt="" />
           </div>
         </div>
@@ -112,5 +112,17 @@ onUnmounted(() => {
   border-radius: 20px;
   color: #ddb1ff;
   font-weight: bold;
+}
+.botao:hover {
+  background-color: #ddb1ff;
+  color: #262424;
+}
+.filme h1 {
+  color: #ddb1ff;
+  font-size: 30px;
+  margin: 0;
+}
+.filme p {
+  color: white;
 }
 </style>
