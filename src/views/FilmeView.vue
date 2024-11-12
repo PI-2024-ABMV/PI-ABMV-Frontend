@@ -1,6 +1,6 @@
 <script setup>
-import FilmeMobile from '@/components/template/small/FilmeMobile.vue';
-import Filme from '@/components/template/large/Filme.vue';
+import SmallFilme from '@/components/template/small/SmallFilme.vue';
+import LargeFilme from '@/components/template/large/LargeFilme.vue';
 
 import {UseMonitor} from '../composables/screen.js';
 
@@ -8,6 +8,6 @@ const { breakpoint } = UseMonitor();
 </script>
 
 <template>
-    <FilmeMobile v-if="breakpoint == `sm`"/>
-    <Filme v-else/> 
+    <SmallFilme v-if="breakpoint == `sm`"/>
+    <LargeFilme v-else/> 
 </template>
