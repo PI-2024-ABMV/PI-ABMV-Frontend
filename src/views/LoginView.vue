@@ -1,14 +1,14 @@
 <script setup>
 
-import Login from '@/components/template/large/Login.vue';
-import LoginMobile from '@/components/template/small/LoginMobile.vue';
+import LargeLogin from '@/components/template/large/LargeLogin.vue';
+import SmallLogin from '@/components/template/small/SmallLogin.vue';
 import {UseMonitor} from '../composables/screen.js';
 const { breakpoint } = UseMonitor();
 </script>
 
 <template>
 
-<LoginMobile v-if="breakpoint =='sm'"/>
-<Login v-else/>
+<SmallLogin v-if="breakpoint =='sm'"/>
+<LargeLogin v-else/>
 
 </template>
