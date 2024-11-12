@@ -1,11 +1,11 @@
 <script setup>
-import ListagemFilme from '@/components/template/large/ListagemFilme.vue';
-import ListagemFilmeMobile from '@/components/template/small/ListagemFilmeMobile.vue';
+import LargeListagemFilme from '@/components/template/large/LargeListagemFilme.vue';
+import SmallListagemFilme from '@/components/template/small/SmallListagemFilme.vue';
 import {UseMonitor} from '../composables/screen.js';
 const { breakpoint } = UseMonitor();
 
 </script>
 <template>
-    <ListagemFilmeMobile v-if="breakpoint == `sm`"/>
-    <ListagemFilme v-else/>
+    <SmallListagemFilme v-if="breakpoint == `sm`"/>
+    <LargeListagemFilme v-else/>
 </template>
