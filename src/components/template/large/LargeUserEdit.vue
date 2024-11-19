@@ -7,10 +7,16 @@
     <input name="Nome" type="text" placeholder="Nome">
     <input name="E-Mail" type="e-mail" placeholder="E-mail">
     <input name="Senha" type="password" placeholder="Senha">
-    <button>Confirmar</button>
+    <button>
+        <router-link to="/user" class="Link">Confirmar</router-link>
+    </button>
 </div>
 </template>
 <style scoped>
+.Link {
+    color: #DDB1FF;
+    text-decoration: none;
+}
 .Container {
     display: flex;
     flex-direction: column;
