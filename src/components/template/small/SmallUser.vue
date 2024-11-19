@@ -4,10 +4,16 @@
   <h2>Sua Conta</h2>
   <img src="../../../../public/user.jpeg" alt="">
   <h1>Miau</h1>
-  <button>Editar</button>
+  <button>
+    <router-link to="/edituser" class="Link">Editar</router-link>
+  </button>
 </div>
 </template>
 <style scoped>
+.Link {
+    color: #DDB1FF;
+    text-decoration: none;
+}
 .Container {
   display: flex;
   flex-direction: column;
