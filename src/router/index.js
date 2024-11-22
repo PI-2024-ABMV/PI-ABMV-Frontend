@@ -37,6 +37,11 @@ const router = createRouter({
           name: 'edituser',
           component: () => import('../views/EditUserView.vue')
         },
+        {
+          path: '/meusingressos',
+          name: 'ingressos',
+          component: () => import('../views/IngressoView.vue')
+        },
       ]
     },
     {
