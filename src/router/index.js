@@ -46,7 +46,12 @@ const router = createRouter({
           path: '/selecaoassento' ,
           name: 'selecaoassento',
           component: () => import('../views/SelecaoAssentoView.vue')
-        }
+        },
+        {
+          path: '/meusingressos',
+          name: 'ingressos',
+          component: () => import('../views/IngressoView.vue')
+        },
       ]
     },
     {
