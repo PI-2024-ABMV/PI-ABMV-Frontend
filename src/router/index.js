@@ -37,6 +37,11 @@ const router = createRouter({
           name: 'edituser',
           component: () => import('../views/EditUserView.vue')
         },
+        {
+          path: '/tipoingresso',
+          name: 'tipoingresso',
+          component: () => import('../views/TipoIngressoView.vue')
+        },
       ]
     },
     {
