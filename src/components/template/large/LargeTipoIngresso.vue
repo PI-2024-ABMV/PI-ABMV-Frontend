@@ -3,7 +3,11 @@ import { useCounterStore } from '@/stores/counter';
 import { ref } from 'vue';
 import TicketConfirmationOutline from 'vue-material-design-icons/TicketConfirmationOutline.vue';
 
+import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
+
 const Contador = ref(0);
+
+
 
 </script>
 <template>
@@ -38,12 +42,18 @@ const Contador = ref(0);
         
         </div>
     </div>  
+    <div>
+       
+        <SelecionadorDeAssento/>
+    </div>
+    
 
-    <button class="final"> Finalizar Compra</button>
+    <button class="final"> Finalizar Compra!!</button>
 
 </div>
 </template>
 <style scoped>
+
 .Selecao {
     display: flex;
     flex-direction: column;

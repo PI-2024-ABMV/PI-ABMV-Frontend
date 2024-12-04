@@ -42,6 +42,11 @@ const router = createRouter({
           name: 'tipoingresso',
           component: () => import('../views/TipoIngressoView.vue')
         },
+        {
+          path: '/selecaoassento' ,
+          name: 'selecaoassento',
+          component: () => import('../views/SelecaoAssentoView.vue')
+        }
       ]
     },
     {
