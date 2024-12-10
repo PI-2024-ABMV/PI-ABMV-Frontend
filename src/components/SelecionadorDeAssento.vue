@@ -33,6 +33,7 @@ function selectSeat(row, col){
             <div v-else class="seats">
                 <template v-for="(seat, j) in rowSeat" :key="j" >
                     <SofaSingle 
+                        :size="20"
                         v-if="seat != -1"
                         :fill-color="getColor(seat)" 
                         @click="selectSeat(i, j)" 

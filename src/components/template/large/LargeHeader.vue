@@ -27,6 +27,7 @@ import { RouterLink } from 'vue-router';
     <style scoped>
     .cabecalho{
     color: #DDB1FF;
+    
     }
     header{
         display: flex;
@@ -35,6 +36,8 @@ import { RouterLink } from 'vue-router';
         background-color: #5F09A3;
         height: 10vh;
         padding: 5vh;
+        padding-top: 6vh;
+        padding-right: 2vw;
     }
     nav{
         display: flex;
@@ -46,6 +49,7 @@ import { RouterLink } from 'vue-router';
         background-color: #490175;
         font-family: 'Lexend Mega';
         font-size: 17px;
+        padding-right: 1vw;
         
     }
     .icon{

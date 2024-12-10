@@ -5,8 +5,27 @@ import TicketConfirmationOutline from 'vue-material-design-icons/TicketConfirmat
 
 import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
 
-const Contador = ref(0);
+const contadormeia = ref(0);
+const contadorint = ref(0);
 
+function incrementmeia() {
+    contadormeia.value++;
+}
+
+function decrementmeia() {
+    if (contadormeia.value > 0) {
+        contadormeia.value--;
+    }
+}
+function incrementint() {
+    contadorint.value++;
+}
+
+function decrementint() {
+    if (contadorint.value > 0) {
+        contadorint.value--;
+    }
+}
 
 
 </script>
@@ -21,9 +40,9 @@ const Contador = ref(0);
         </div>
         <div class="AddExc">
 
-            <button class="Botao">+</button>
-            {{ Contador }}
-            <button class="Botao">-</button>
+            <button class="Botao" @click="incrementint">+</button>
+            {{ contadorint }}
+            <button class="Botao" @click="decrementint">-</button>
 
         </div>
     </div>  
@@ -36,19 +55,15 @@ const Contador = ref(0);
         </div>
         <div class="AddExc">
             
-            <button class="Botao" @click="useCounterStore">+</button>
-            {{ Contador }}
-            <button class="Botao">-</button>
+            <button class="Botao" @click="incrementmeia">+</button>
+            {{ contadormeia }}
+            <button class="Botao" @click="decrementmeia">-</button>
         
         </div>
     </div>  
-    <div>
-       
-        <SelecionadorDeAssento/>
-    </div>
-    
+   
 
-    <button class="final"> Finalizar Compra!!</button>
+    <button class="final"> Finalizar Compra</button>
 
 </div>
 </template>

@@ -50,7 +50,7 @@ footer {
     text-align: center;
     padding: 10px;
     position: relative;
-    top: 10vh;
+    top: 20vh;
     width: 100%;
 }   
 .conteudo {
