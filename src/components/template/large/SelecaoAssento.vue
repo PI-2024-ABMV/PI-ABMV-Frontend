@@ -1,6 +1,6 @@
 <script setup>
 import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 import SofaSingle from 'vue-material-design-icons/SofaSingle.vue';
 
 const props = defineProps({
@@ -15,8 +15,17 @@ const props = defineProps({
     default: () => [
       '22 ', '23 ', '24 ', '25 ', '26 '
     ]
-  }
+  } 
+
 });
+
+const seat = ref('')
+
+const rowToLetter = (num) => String.fromCharCode(65 + num); 
+
+function seleciona(selectedSeats){ 
+  seat.value = `${selectedSeats.map(seat => `${rowToLetter(seat.row)}${seat.col + 1}`)}`
+}
 
 
 
@@ -51,16 +60,14 @@ const props = defineProps({
       <div class="assentoEscolhido">
         <div class="locais">
           <h3>Lugares selecionados</h3>
-          <p>NAO SEI</p>
-          <h3>Ingressos</h3>
-          <p>NAO SEI</p>
+          <p class="ass">{{seat}}</p>
         </div>
         <div class="escolhaIngresso">
           <router-link to="/tipoingresso" class="link" > <button> Escolha de Ingresso</button> </router-link>
         </div>
       </div>
       <div class="assentos">
-        <SelecionadorDeAssento />
+        <SelecionadorDeAssento @seleciona="seleciona" />
         <div class="tela">
           <h2>Tela</h2>
         </div>
@@ -308,5 +315,9 @@ select::-webkit-keygen-select {
   font-size: large;
   font-weight: bold;
   border-bottom: solid
+}
+.ass{
+  display: flex;
+  flex-direction: column;
 }
 </style>
