@@ -1,7 +1,7 @@
 <script setup>
 import SofaSingle from 'vue-material-design-icons/SofaSingle.vue';
 import { ref } from 'vue';
-
+const emit = defineEmits(['seleciona'])
 
 const mapSeats = ref([
     [0, 0, 0, 0, 0,-1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0],
@@ -17,13 +17,19 @@ const mapSeats = ref([
 ])
 
 const getColor = (v) => v == 1 ?'red' : v == 2 ? 'grey' : '#DDB1FF'
+let selectedSeats = ref([]);
 
 function selectSeat(row, col){
+
     if(mapSeats.value[row][col] == 0){
         mapSeats.value[row][col] = 2;
+        this.selectedSeats.push({row, col});
     }else if (mapSeats.value[row][col] == 2){
         mapSeats.value[row][col] = 0;
+        this.selectedSeats = this.selectedSeats.filter(seat => seat.row !== row || seat.col !== col);
     }
+    console.log(selectedSeats)
+    emit('seleciona', selectedSeats.value)
 }
 
 </script>
