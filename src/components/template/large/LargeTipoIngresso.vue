@@ -1,9 +1,7 @@
 <script setup>
-import { useCounterStore } from '@/stores/counter';
 import { ref } from 'vue';
 import TicketConfirmationOutline from 'vue-material-design-icons/TicketConfirmationOutline.vue';
 
-import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
 
 const contadormeia = ref(0);
 const contadorint = ref(0);
@@ -26,8 +24,14 @@ function decrementint() {
         contadorint.value--;
     }
 }
+// let total = (contadormeia.value * 20) + (contadorint.value * 40);
 
+// let valor1 = contadormeia.value;
+// let valor2 = contadorint.value;
 
+// function totalingresso() {
+//     total.value = (valor1 * 20) + (valor2 * 40);
+// }
 </script>
 <template>
 <div class="Selecao">
@@ -73,9 +77,9 @@ function decrementint() {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 98%;
     height: 100%;
     gap: 6vh;
     color: #DDB1FF ;
@@ -88,7 +92,7 @@ function decrementint() {
     justify-content:space-between;
     margin: 10px;
     background-color: #474545;
-    width: 100%;
+    width: 70%;
     height:15vh ;
     padding: 10px;
     border-radius: 15px;

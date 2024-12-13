@@ -1,6 +1,14 @@
 <script setup>
-import SelecaoAssento from '@/components/template/large/SelecaoAssento.vue';
+
+import LargeTipoIngresso from '@/components/template/large/LargeTipoIngresso.vue';
+import SmallTipoIngresso from '@/components/template/small/SmallTipoingresso.vue';
+import {UseMonitor} from '../composables/screen.js';
+const { breakpoint } = UseMonitor();
 </script>
+
 <template>
-    <SelecaoAssento/>
+
+<SmallTipoIngresso v-if="breakpoint =='sm'"/>
+<LargeTipoIngresso v-else/>
+
 </template>
