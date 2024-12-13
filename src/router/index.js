@@ -38,7 +38,12 @@ const router = createRouter({
           component: () => import('../views/EditUserView.vue')
         },
         {
-          path: '/tipoingresso',
+          path: '/meusingressos',
+          name: 'ingressos',
+          component: () => import('../views/IngressoView.vue')
+        },
+        {
+         path: '/tipoingresso',
           name: 'tipoingresso',
           component: () => import('../views/TipoIngressoView.vue')
         },
