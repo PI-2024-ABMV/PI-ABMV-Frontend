@@ -2,6 +2,7 @@
 import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
 import { ref } from 'vue';
 import SofaSingle from 'vue-material-design-icons/SofaSingle.vue';
+import TicketConfirmationOutline from 'vue-material-design-icons/TicketConfirmationOutline.vue';
 
 const seat = ref('')
 
@@ -13,7 +14,7 @@ function seleciona(selectedSeats){
 </script>
 <template>
  <div class="container">
-
+ 
     <div class="assentos">
         <SelecionadorDeAssento @seleciona="seleciona" />
         <div class="tela">
@@ -26,39 +27,56 @@ function seleciona(selectedSeats){
         </div>
         
        </div>
+       <div class="zonaAssento">
        <div class="assentoEscolhido">
         <div class="locais">
-          <h3>Lugares selecionados</h3>
+          <TicketConfirmationOutline class="Icon" size="70"/>
           <p class="ass">{{seat}}</p>
         </div>
         <div class="escolhaIngresso">
-          <router-link to="/tipoingresso" class="link" > <button> Escolha de Ingresso</button> </router-link>
+          <router-link to="/tipoingresso" class="link" > <button> Escolha de ingresso </button> </router-link>
         </div>
+      </div>
       </div>
  </div>
 </template>
 <style scoped>
+.container{
+  margin-top: 5vh;
+}
 .assentos{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2vw;
+  gap: 0.5vh;
   width: 100%;
   color: #262424;
   
 }
+.zonaAssento {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  height: 30vh;
+  color: #262424;
+ 
+}
+.escolhaIngresso{
+  position: absolute;
+  right: 5vw;
+}
 .assentoEscolhido{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
   height: 10vh;
-  background-color: #DDB1FF;
+  gap: 40vw;
   color: #262424;
-  font-size: large;
   font-weight: bold;
-  border-bottom: solid
+  border-bottom: solid;
+  margin-left: 1vw;
 }
 .legenda{
   display: flex;
@@ -105,10 +123,11 @@ function seleciona(selectedSeats){
   color: #DDB1FF;
   border: solid 1px #DDB1FF;
   border-radius: 30px;
-  font-size: large;
+  font-size: small;
   font-weight: bold;
   font-family: 'Lexend Mega';
   padding: 1vh;
+  width: 35vw;
   margin-top: 1vh;
   cursor: pointer;
   height: 10vh;
@@ -121,29 +140,26 @@ function seleciona(selectedSeats){
 }
 .locais{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
   height: 50%;
-  width: 80%;
-  gap: 4vh;
+  width: 100%;
+  gap: 4vw;
   font-family: 'Lexend Mega';
   color: #DDB1FF;
-  border: solid 1px #DDB1FF;
-  border-radius: 15px;
-  box-shadow: 1px 1px 5px #DDB1FF;
-}
-.locais h3{
-  font-size: 2vh;
-  font-weight: bold;
-  font-family: 'Lexend Mega';
-  color: #DDB1FF;
+  margin-left: 5vw;
+  
 }
 .locais p{
-  font-size: 0.5vh;
+  font-size: 1.5vh;
   font-weight: bold;
   font-family: 'Lexend Mega';
   color: #DDB1FF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap:break-word ;
 }
 .assentoEscolhido{
   display: flex;

@@ -207,18 +207,6 @@ select::-webkit-keygen-select {
   border-radius: 20px;
   box-shadow: 1px 1px 5px #DDB1FF;
 }
-.assentoEscolhido{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  background-color: #DDB1FF;
-  color: #262424;
-  font-size: large;
-  font-weight: bold;
-  border-bottom: solid
-}
 .legenda{
   display: flex;
   flex-direction: row;
@@ -304,6 +292,7 @@ select::-webkit-keygen-select {
   font-family: 'Lexend Mega';
   color: #DDB1FF;
 }
+
 .assentoEscolhido{
   display: flex;
   flex-direction: column;
