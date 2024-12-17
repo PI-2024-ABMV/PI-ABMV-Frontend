@@ -1,18 +1,46 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { useAuthStore } from '@/stores/auth';
+
+const email = ref('');
+const password = ref('');
+
+// Access the authentication store
+const authStore = useAuthStore();
+
+// Handle the login process
+const login = async () => {
+  try {
+    await authStore.login({ email: email.value, password: password.value });
+    alert('Login successful!');
+    // router.push('/');
+  } catch (error) {
+    alert('Login failed. Please check your credentials.');
+    console.error('Error:', error);
+    console.log("email:" + email.value, "senha:" + password.value);
+    
+  }
+};
+
+</script>
 <template>
     <div class="Container">
         <div class="Login">
             <img src="../../../../public/logoMew.png" height="70vh">
             <div class="Campos">
-                <input name="E-Mail" type="e-mail" placeholder="E-mail">
-                <input name="E-Mail" type="password" placeholder="Senha">
+                <input type="e-mail" placeholder="E-mail" v-model="email">
+                <input type="password" placeholder="Senha" v-model="password">
             </div>
-            <button class="ButtonLogin">Login</button>
+            <button class="ButtonLogin" @click="login()">Login</button>
         </div>
         <div class="Cadastro">
             <h2>Olá</h2>
             <p>Caso não possua uma conta no MewMovies crie uma para ter acesso ap site!</p>
-            <button>Cadastre-se</button>
+            <button>
+                <RouterLink to="/cadastro" class="link">
+                Cadastre-se
+                </RouterLink>
+            </button>
         </div>
     </div>
 </template>
@@ -107,5 +135,9 @@
 ::-webkit-input-placeholder {
    color: #DDB1FF;
    font: 'Lexend Mega';
+}
+.link {
+    text-decoration: none;
+    color: inherit;
 }
 </style>
