@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 import { useMoviesStore } from '@/stores/movie'
 import convertTime from '../../../helpers/formatTime'
@@ -45,7 +45,7 @@ onUnmounted(() => {
         </div>
         <div class="botoes">
           <button class="botao">Trailer</button>
-          <button class="botao">Comprar Ingressos</button>
+         <router-link to="/selecaoassento" class="link"> <button class="botao">Comprar Ingressos</button></router-link>
         </div>
       </div>
     </div>
@@ -132,6 +132,11 @@ span {
   box-shadow: #ddb1ff 0px 0px 7px;
   border-radius: 20px;
   color: #ddb1ff;
-  font-weight: bold;
+  font-weight: bol;
+  cursor: pointer;
+}
+.link{
+  text-decoration: none;
+  
 }
 </style>
