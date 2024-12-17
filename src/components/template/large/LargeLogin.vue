@@ -12,10 +12,10 @@ const authStore = useAuthStore();
 const login = async () => {
   try {
     await authStore.login({ email: email.value, password: password.value });
-    alert('Login successful!');
-    // router.push('/');
+    // alert('Login successful!');
+    router.push('/');
   } catch (error) {
-    alert('Login failed. Please check your credentials.');
+    // alert('Login failed. Please check your credentials.');
     console.error('Error:', error);
     console.log("email:" + email.value, "senha:" + password.value);
     
