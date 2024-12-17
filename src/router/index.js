@@ -51,6 +51,11 @@ const router = createRouter({
           path: '/selecaoassento' ,
           name: 'selecaoassento',
           component: () => import('../views/SelecaoAssentoView.vue')
+        },
+        {
+          path: '/pagamento',
+          name: 'pagamento',
+          component: () => import('../views/FormaDePagamentoView.vue')
         }
       ]
     },
