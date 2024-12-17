@@ -1,9 +1,7 @@
 <script setup>
-import { useCounterStore } from '@/stores/counter';
 import { ref } from 'vue';
 import TicketConfirmationOutline from 'vue-material-design-icons/TicketConfirmationOutline.vue';
 
-import SelecionadorDeAssento from '@/components/SelecionadorDeAssento.vue';
 
 const contadormeia = ref(0);
 const contadorint = ref(0);
