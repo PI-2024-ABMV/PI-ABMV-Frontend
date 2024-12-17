@@ -100,6 +100,7 @@ onMounted(async () => {
     color: #DDB1FF;
     font-family: 'Lexend Mega';
     height: 100vh;
+    margin-bottom: 15vh;
 }
 
 .Conteiner h2 {
