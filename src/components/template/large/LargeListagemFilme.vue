@@ -22,7 +22,7 @@ onMounted(async () => {
 <template>
 
     <div class="ApreFilme">
-        <img id="CartazApre" height="400px" src="../../public/aprefilme.png" alt="">
+        <img id="CartazApre" height="400px" src="../../../../public/aprefilme.png" alt="">
         <div class="ContainerTexto">
             <h1>Duna - Parte 2</h1>
             <p>Paul Atreides se une a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram
