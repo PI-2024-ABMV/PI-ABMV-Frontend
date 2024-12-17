@@ -60,13 +60,15 @@ function decrementint() {
         </div>
     </div>  
    
-
-    <button class="final"> Finalizar Compra</button>
+    <router-link to="/pagamento" class="link"><button class="final"> Finalizar Compra</button>
+    </router-link>
 
 </div>
 </template>
 <style scoped>
-
+.link{
+    text-decoration: none;
+}
 .Selecao {
     display: flex;
     flex-direction: column;
@@ -86,7 +88,7 @@ function decrementint() {
     justify-content:space-between;
     margin: 10px;
     background-color: #474545;
-    width: 70%;
+    width: 90%;
     height:15vh ;
     padding: 10px;
     border-radius: 15px;
@@ -95,14 +97,12 @@ function decrementint() {
 .AddExc {
     display: flex;
     flex-direction: row;
-    justify-content:right;
+    justify-content:center;
     align-items: center;
-    
     width: 100%;
     height:100% ;
-    font-size: 40px;
-    gap: 1vw;
-    padding: 10px;
+    font-size: 2rem;
+    gap: 2vw;
 }
 .info {
     display: flex;
@@ -122,7 +122,7 @@ function decrementint() {
 display: flex;
 justify-content: center;
 align-items: center;
-width: 2.5vw;
+width: 3.5vw;
 height: 4.8vh;   
 background-color: #262424 ; 
 color: #DDB1FF ;
@@ -130,13 +130,14 @@ font-size: 30px;
 border: solid 0.5px #DDB1FF;
 border-radius: 100px;
 cursor: pointer;
+padding: 1vw;
 }
 button:active{
     background-color: #DDB1FF ;
     color: #262424 ;
 }
 .final{
-    width: 30%;
+    width: 100%;
     height: 10vh;
     border-radius: 45px;
     padding: 1vh;
