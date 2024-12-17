@@ -14,13 +14,19 @@
             </RouterLink>
         </div>
         <div class="EmBreve">
-            <NewBox :size="50" class="hover"/>
+            <router-link to="" class="link">
+                <NewBox :size="50" class="hover"/>
+            </router-link>
         </div>
         <div class="Ingresso">
-            <TicketConfirmationOutline :size="50" class="hover"/>
+            <router-link to="/meusingressos" class="link">
+                <TicketConfirmationOutline :size="50" class="hover"/>
+            </router-link>
         </div>
         <div class="Perfil">
-            <AccountCircleOutline :size="50" class="hover"/>
+            <router-link to="/user" class="link">
+                <AccountCircleOutline :size="50" class="hover"/>
+            </router-link>
         </div>
     </nav>
 </template>
@@ -36,6 +42,7 @@ nav{
     justify-content: space-around;
     height: 8vh;
     align-items: center;
+   
 }
 .hover:hover{
     color: #DDB1FF;

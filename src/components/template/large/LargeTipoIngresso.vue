@@ -61,7 +61,7 @@ function decrementint() {
     </div>  
    
 
-    <button class="final"> Finalizar Compra</button>
+    <router-link to="/pagamento" class="link"> <button class="final"> Finalizar Compra</button> </router-link>
 
 </div>
 </template>
@@ -78,6 +78,10 @@ function decrementint() {
     gap: 6vh;
     color: #DDB1FF ;
     padding: 80px;
+    
+}
+.link{
+    text-decoration: none;
     
 }
 .Ingresso {
@@ -136,7 +140,7 @@ button:active{
     color: #262424 ;
 }
 .final{
-    width: 30%;
+    width: 100%;
     height: 10vh;
     border-radius: 45px;
     padding: 1vh;

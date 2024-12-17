@@ -10,8 +10,9 @@ import { RouterLink } from 'vue-router';
             <header>
                 <RouterLink to="/"><img src="../../../../public/logoMew.png" height="70vh"></RouterLink>
                 <div class="icon">
-                    <TicketOutline :size="45" class="hover"/>
-                    <AccountCircleOutline :size="45" class="hover"/>
+                   <router-link to="/meusingressos" class="link"> <TicketOutline :size="45" class="hover" fill-color="#DDB1FF"/> </router-link>
+                    <router-link to="/user"> <AccountCircleOutline :size="45" class="hover" fill-color="#DDB1FF"/> 
+                    </router-link>
                 </div>
             </header>
             <nav>
@@ -51,6 +52,10 @@ import { RouterLink } from 'vue-router';
         font-size: 17px;
         padding-right: 1vw;
         
+    }
+    .link{
+        text-decoration: none;
+     
     }
     .icon{
         display: flex;

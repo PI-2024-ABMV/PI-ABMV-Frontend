@@ -46,7 +46,7 @@ onUnmounted(() => {
         <p class="sinopse">{{ movieStore.movie?.overview }}</p>
         <div class="botoes">
           <button class="botao">Trailer</button>
-          <button class="botao">Comprar Ingressos</button>
+          <router-link to="/selecaoassento" class="link"> <button class="botao">Comprar Ingressos</button></router-link>
         </div>
       </div>
     </div>
@@ -112,6 +112,10 @@ onUnmounted(() => {
   border-radius: 20px;
   color: #ddb1ff;
   font-weight: bold;
+  cursor: pointer;
+}
+.link{
+  text-decoration: none;
 }
 .botao:hover {
   background-color: #ddb1ff;
