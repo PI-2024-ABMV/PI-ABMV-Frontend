@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth';
+
+const router = useRouter()
 
 const email = ref('');
 const password = ref('');
@@ -12,7 +15,7 @@ const authStore = useAuthStore();
 const login = async () => {
   try {
     await authStore.login({ email: email.value, password: password.value });
-    // alert('Login successful!');
+    console.log("Foi")
     router.push('/');
   } catch (error) {
     // alert('Login failed. Please check your credentials.');
