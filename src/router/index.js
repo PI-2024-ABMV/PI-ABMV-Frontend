@@ -27,6 +27,36 @@ const router = createRouter({
           name: 'filme',
           component: () => import('../views/FilmeView.vue')
         },
+        {
+          path: '/user',
+          name: 'user',
+          component: () => import('../views/UserView.vue')
+        },
+        {
+          path: '/edituser',
+          name: 'edituser',
+          component: () => import('../views/EditUserView.vue')
+        },
+        {
+          path: '/tipoingresso',
+          name: 'tipoingresso',
+          component: () => import('../views/TipoIngressoView.vue')
+        },
+        {
+          path: '/selecaoassento' ,
+          name: 'selecaoassento',
+          component: () => import('../views/SelecaoAssentoView.vue')
+        },
+        {
+          path: '/meusingressos',
+          name: 'ingressos',
+          component: () => import('../views/IngressoView.vue')
+        },
+        {
+          path: '/pagamento',
+          name: 'pagamento',
+          component: () => import('../views/FormaDePagamentoView.vue')
+        }
       ]
     },
     {

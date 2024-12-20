@@ -71,7 +71,7 @@
     justify-content: center;
     align-items: center;
     font-size: x-large;
-    color: #DDB1FF;
+    color: cc;
 }
 .Cadastro p{
     width: 60%;

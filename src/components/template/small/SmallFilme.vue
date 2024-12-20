@@ -23,7 +23,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="container">
     <div class="filme">
       <div class="cartaz">
         <img :src="`https://image.tmdb.org/t/p/w500/${movieStore.movie?.poster_path}`" alt="" />
@@ -37,101 +36,97 @@ onUnmounted(() => {
             }}</span>
           </div>
           <div class="infos">
-            <span>{{ convertTime(movieStore.movie?.runtime) }} | </span>
-            <span> {{ movieStore.movie?.vote_average.toFixed(1) }}/10 | </span>
+            <p>Duração: {{ convertTime(movieStore.movie?.runtime) }}</p>
+            <p>Avaliação: {{ movieStore.movie?.vote_average.toFixed(1) }}/10 </p>
             <img src="../../public/class14.png" alt="" />
           </div>
-          <p class="sinopse">{{ movieStore.movie?.overview }}</p>
         </div>
+      </div>
+      <div class="box">
+        <p class="sinopse">{{ movieStore.movie?.overview }}</p>
         <div class="botoes">
           <button class="botao">Trailer</button>
-          <button class="botao">Comprar Ingressos</button>
+          <router-link to="/selecaoassento" class="link"> <button class="botao">Comprar Ingressos</button></router-link>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #262424;
-}
 
 .filme {
   display: flex;
   padding: 20px;
   background-color: #262424;
+  flex-wrap: wrap
 }
 
 .cartaz {
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: center;
 }
 
 .cartaz img {
-  width: 60%;
+  width: 70%;
 }
 
 .generos {
   display: flex;
   gap: 10px;
   margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .genero {
-  max-width: fit-content;
-  padding: 7px 12px;
-  border-radius: 20px;
-  font-size: 18px;
-  background-color: #3e3c3c;
+  padding: 15px 20px;
   font-size: 12px;
-  color: #ddb1ff;
+  border-radius: 20px;
   font-weight: bold;
+  background-color: #3e3c3c;
+  color: #ddb1ff;
 }
 
 .informacoes {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.informacoes h1 {
-  font-size: 24px;
-  color: white;
-}
-
-.informacoes p,
-span {
-  font-size: 16px;
-  color: white;
-}
-
-.informacoes img {
-  width: 16px;
+  width: 50%;
 }
 
 .sinopse {
-  font-size: 18px;
-  margin: 5px 0;
+  font-size: 16px;
+  margin: 8%;
 }
 
 .botoes {
-  z-index: 999;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  margin: 0 30px;
 }
 
 .botao {
-  padding: 5px 20px;
+  padding: 10px 20px;
   background-color: #262424;
   box-shadow: #ddb1ff 0px 0px 7px;
   border-radius: 20px;
   color: #ddb1ff;
   font-weight: bold;
+  cursor: pointer;
+}
+.link{
+  text-decoration: none;
+}
+.botao:hover {
+  background-color: #ddb1ff;
+  color: #262424;
+}
+.filme h1 {
+  color: #ddb1ff;
+  font-size: 30px;
+  margin: 0;
+}
+.filme p {
+  color: white;
 }
 </style>

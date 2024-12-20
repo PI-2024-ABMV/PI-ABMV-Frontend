@@ -1,11 +1,11 @@
 <script setup>
-import Cadastro from '@/components/template/large/Cadastro.vue';
-import CadastroMobile from '@/components/template/small/CadastroMobile.vue';
+import LargeCadastro from '@/components/template/large/LargeCadastro.vue';
+import SmallCadastro from '@/components/template/small/SmallCadastro.vue';
 import {UseMonitor} from '../composables/screen.js';
 const { breakpoint } = UseMonitor();
 </script>
 
 <template>
-    <CadastroMobile v-if="breakpoint =='sm'"/>
-    <Cadastro v-else/>
+    <SmallCadastro v-if="breakpoint =='sm'"/>
+    <LargeCadastro v-else/>
 </template>
